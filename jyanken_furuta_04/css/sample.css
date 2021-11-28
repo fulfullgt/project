@@ -1,0 +1,108 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+}
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+main{
+    border-bottom:2px solid #ccc;
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding: 0;
+    border-top: 3px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    border: 3px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
+
+.win{
+    display: flex;
+    justify-content: center;
+}
+
+.lose{
+    display: flex;
+    justify-content: center;
+}
+
+.imgwin{
+    height: 280px;
+    width: auto;
+} 
+
+.imglose{
+    height: 280px;
+    width: auto;
+} 
+
+.toziru{
+    display: flex;
+    justify-content: center;
+}
+
+.modal_win{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal_lose{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal__bg{
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.modal__content_win{
+    background: #fff;
+    left: 50%;
+    position: absolute;
+    top: 48%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+}
+.modal__content_lose{
+    background: #fff;
+    left: 50%;
+    position: absolute;
+    top: 48%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+}

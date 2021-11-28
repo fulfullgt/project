@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn"><img src="img/gu.png" alt="グー"></li>
+    <li id="cho_btn"><img src="img/choki.png" alt="チョキ"></li>
+    <li id="par_btn"><img src="img/pa.png" alt="パー"></li>
+  </ul>
+  <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+  <div id="judgment">結果は、、、</div>
+</main>
+
+<div class="modal_win">
+  <div class="modal__bg js-modal-close"></div>
+  <div class="modal__content_win">
+      <div class="win"><img class="imgwin" src="img/win.png" alt=""></div>
+      <div class="toziru"><a class="js-modal-close" href="">閉じる</a></div>
+  </div><!--modal__inner-->
+</div><!--modal-->
+
+<div class="modal_lose">
+  <div class="modal__bg js-modal-close"></div>
+  <div class="modal__content_lose">
+      <div class="lose"><img class="imglose" src="img/lose.png" alt=""></div>
+      <div class="toziru"><a class="js-modal-close" href="">閉じる</a></div>
+  </div><!--modal__inner-->
+</div><!--modal-->
+
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+$("#gu_btn").on("click", function(){
+  const janken = Math.ceil( Math.random() * 3);
+  if(janken == 1){
+    $("#pc_hands").text("グー");
+    $("#judgment").text("あいこ");
+  };
+  if(janken == 2){
+    $("#pc_hands").text("チョキ");
+    $("#judgment").text("勝ち!!!");
+    $(".modal_win").fadeIn();
+    return false;
+    $(".js-modal-close").click(function() {
+        $(".modal_win").fadeOut();
+    });
+  };
+  if(janken == 3){
+    $("#pc_hands").text("パー");
+    $("#judgment").text("負け。。。");
+    $(".modal_lose").fadeIn();
+    return false;
+    $(".js-modal-close").click(function() {
+        $(".modal_lose").fadeOut();
+    });
+  };
+});
+
+
+$("#cho_btn").on("click", function(){
+  const janken = Math.ceil( Math.random() * 3);
+  if(janken == 1){
+    $("#pc_hands").text("チョキ");
+    $("#judgment").text("あいこ");
+  };
+  if(janken == 2){
+    $("#pc_hands").text("パー");
+    $("#judgment").text("勝ち!!!");
+    $(".modal_win").fadeIn();
+    return false;
+    $('.js-modal-close').click(function() {
+        $(".modal_win").fadeOut();
+    });
+  };
+  if(janken == 3){
+    $("#pc_hands").text("グー");
+    $("#judgment").text("負け。。。");
+    $(".modal_lose").fadeIn();
+    return false;
+    $(".js-modal-close").click(function() {
+        $(".modal_lose").fadeOut();
+    });
+  };
+});
+
+$("#par_btn").on("click", function(){
+  const janken = Math.ceil( Math.random() * 3);
+  if(janken == 1){
+    $("#pc_hands").text("パー");
+    $("#judgment").text("あいこ");
+  };
+  if(janken == 2){
+    $("#pc_hands").text("グー");
+    $("#judgment").text("勝ち!!!");
+    $(".modal_win").fadeIn();
+    return false;
+    $(".js-modal-close").click(function() {
+        $(".modal_win").fadeOut();
+    });
+  };
+  if(janken == 3){
+    $("#pc_hands").text("チョキ");
+    $("#judgment").text("負け。。。");
+    $(".modal_lose").fadeIn();
+    return false;
+    $(".js-modal-close").click(function() {
+        $(".modal_lose").fadeOut();
+    });
+  };
+});
+
+
+</script>
+</body>
+</html>
